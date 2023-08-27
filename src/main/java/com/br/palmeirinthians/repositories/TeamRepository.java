@@ -1,4 +1,4 @@
 package com.br.palmeirinthians.repositories;
 
-public interface TimesRepository {
+public interface TeamRepository {
 }
