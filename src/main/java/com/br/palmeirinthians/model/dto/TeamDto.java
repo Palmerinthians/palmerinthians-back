@@ -6,7 +6,7 @@ import com.br.palmeirinthians.model.entity.PlayerEntity;
 import java.util.List;
 
 public record TeamDto(
-        Long code,
+        Long teamCode,
         String name,
         List<LeagueEntity> leagues,
         List<PlayerEntity> players ) { }

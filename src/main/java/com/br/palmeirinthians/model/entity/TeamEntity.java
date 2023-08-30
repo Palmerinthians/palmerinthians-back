@@ -18,7 +18,7 @@ public class TeamEntity extends BaseModel {
 
     @Getter
     @Setter
-    private Long code;
+    private Long teamCode;
 
     @Getter
     @Setter
