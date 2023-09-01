@@ -7,10 +7,12 @@ import com.br.palmeirinthians.services.TeamService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class TeamServiceImpl implements TeamService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger( TeamServiceImpl.class );
@@ -22,11 +24,12 @@ public class TeamServiceImpl implements TeamService {
     private TeamMapper teamMapper;
 
     @Override
-    public List<TeamDto> getAll() {
+    public List<TeamDto> getAll()
+    {
         LOGGER.debug( "Obtendo os times" );
 
         return teamRepository.findAll( )
-                .stream()
+                .stream( )
                 .map( teamMapper::asTeamDto )
                 .collect( Collectors.toList( ) );
     }
