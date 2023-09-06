@@ -17,20 +17,25 @@ public class TeamServiceImpl implements TeamService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger( TeamServiceImpl.class );
 
-    @Autowired
-    private TeamRepository teamRepository;
+    private TeamRepository repository;
+
+    //private TeamMapper mapper;
 
     @Autowired
-    private TeamMapper teamMapper;
+    public TeamServiceImpl(TeamRepository repository) {
+        this.repository = repository;
+        //this.mapper = mapper;
+    }
 
     @Override
     public List<TeamDto> getAll()
     {
         LOGGER.debug( "Obtendo os times" );
 
-        return teamRepository.findAll( )
-                .stream( )
-                .map( teamMapper::asTeamDto )
-                .collect( Collectors.toList( ) );
+//        return repository.findAll( )
+//                .stream( )
+//                .map( mapper::asTeamDto )
+//                .collect( Collectors.toList( ) );
+        return null;
     }
 }

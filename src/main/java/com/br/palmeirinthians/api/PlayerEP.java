@@ -3,14 +3,16 @@ package com.br.palmeirinthians.api;
 import com.br.palmeirinthians.model.dto.PlayerDto;
 import com.br.palmeirinthians.services.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController("players")
+@Controller("players")
 public class PlayerEP {
 
     private final PlayerService playerService;

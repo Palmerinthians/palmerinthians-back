@@ -4,16 +4,16 @@ import com.br.palmeirinthians.generic.BaseModel;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class TeamEntity extends BaseModel {
 
     @Getter
@@ -26,11 +26,11 @@ public class TeamEntity extends BaseModel {
 
     @Getter
     @Setter
-    @ManyToMany
-    private List<LeagueEntity> leagues;
+    @OneToMany(mappedBy = "team")
+    private List<RelTeamLeague> team;
 
     @Getter
-    @OneToMany(mappedBy = "player")
-    private List<PlayerEntity> players;
+    @OneToMany(mappedBy = "team")
+    private Set<PlayerEntity> players;
 
 }

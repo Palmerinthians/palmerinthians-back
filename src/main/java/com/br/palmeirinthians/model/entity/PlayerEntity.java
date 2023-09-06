@@ -3,6 +3,7 @@ package com.br.palmeirinthians.model.entity;
 import com.br.palmeirinthians.generic.BaseModel;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.*;
 
@@ -12,7 +13,6 @@ import lombok.*;
 @NoArgsConstructor
 public class PlayerEntity extends BaseModel {
 
-    @Id
     @Getter
     @Setter
     private Long playerCode;
@@ -27,7 +27,7 @@ public class PlayerEntity extends BaseModel {
 
     @Getter
     @ManyToOne
-    // TODO: Join column
+    @JoinColumn(name = "team_id", nullable = false)
     private TeamEntity team;
 
     @Getter

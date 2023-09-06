@@ -4,8 +4,11 @@ import com.br.palmeirinthians.model.dto.PlayerDto;
 import com.br.palmeirinthians.model.entity.PlayerEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
-@Mapper(componentModel = "spring")
+//@Mapper(componentModel = "spring")
+@Component
 public interface PlayerMapper {
 
     @Mapping( target = "playerCode", source = "playerCode" )
